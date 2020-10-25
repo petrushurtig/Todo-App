@@ -18,7 +18,6 @@ const Todolist = () => {
     <td>{todo.desc}</td>
     <td>{todo.date}</td>
   </tr>)
-  console.log({todoItems}); 
 
   return (
     <div className="App">
@@ -31,14 +30,13 @@ const Todolist = () => {
                     <input type="submit" value="Add"/>
                 </form>
             </div>
-      <table><tbody>
-        <tr><th>Description</th><th>Date</th></tr>
-        {todoItems}  
+      <table>
+        <tbody>
+          <tr><th>Description</th><th>Date</th></tr>
+            {todoItems}  
         </tbody>
       </table>
-      </div>
-  ) }
-  
-      
-    
+  </div>
+  ) 
+}
 export default Todolist;
