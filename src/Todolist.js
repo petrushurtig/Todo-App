@@ -15,8 +15,8 @@ const Todolist = () => {
   }
   const todoItems = todos.map((todo, index) => 
   <tr key={index}>
-    <td>{todo.desc}</td>
     <td>{todo.date}</td>
+    <td>{todo.desc}</td>
   </tr>)
 
   return (
@@ -32,7 +32,7 @@ const Todolist = () => {
             </div>
       <table>
         <tbody>
-          <tr><th>Description</th><th>Date</th></tr>
+          <tr><th>Date</th><th>Description</th></tr>
             {todoItems}  
         </tbody>
       </table>
