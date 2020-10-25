@@ -13,6 +13,12 @@ const Todolist = () => {
     event.preventDefault();
     setTodos([...todos, todo]);
   }
+  const todoItems = todos.map((todo, index) => 
+  <tr key={index}>
+    <td>{todo.desc}</td>
+    <td>{todo.date}</td>
+  </tr>)
+  console.log({todoItems}); 
 
   return (
     <div className="App">
@@ -25,15 +31,9 @@ const Todolist = () => {
                     <input type="submit" value="Add"/>
                 </form>
             </div>
-
       <table><tbody>
         <tr><th>Description</th><th>Date</th></tr>
-        {todos.map((todo) =>
-            <tr key={todo.desc}>
-              <td>{todo.desc}</td> 
-              <td>{todo.date}</td> 
-            </tr>
-            )}
+        {todoItems}  
         </tbody>
       </table>
       </div>
