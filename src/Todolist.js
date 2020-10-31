@@ -7,16 +7,23 @@ const Todolist = () => {
 
   const inputChanged = (event) => {
     setTodo({...todo, [event.target.name]: event.target.value});
+    
   }
 
   const addTodo = (event) => {
     event.preventDefault();
     setTodos([...todos, todo]);
   }
+
+  const DeleteRow = (index) => {
+    const newTodos = todos.filter((todo, i) => i !== index);
+    setTodos(newTodos);
+  }
   const todoItems = todos.map((todo, index) => 
   <tr key={index}>
     <td>{todo.date}</td>
     <td>{todo.desc}</td>
+    <td><button onClick={() => DeleteRow(index)}>Delete</button></td>
   </tr>)
 
   return (
